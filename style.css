@@ -1,0 +1,117 @@
+/* Estilos gerais do corpo da página */
+body {
+    font-family: 'Bai Jamjuree', sans-serif; /* Usando a fonte escolhida */
+    background: linear-gradient(to bottom right, #e0f2f7, #c8e6c9); /* Gradiente de fundo suave */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Garante que o corpo ocupe a altura total da viewport */
+    margin: 0;
+    color: #333; /* Cor de texto padrão mais escura para melhor leitura */
+    line-height: 1.6;
+}
+
+/* Estilos para o contêiner principal */
+main {
+    background-color: #ffffff; /* Fundo branco para o conteúdo principal */
+    padding: 30px;
+    border-radius: 15px; /* Cantos mais arredondados */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada */
+    max-width: 90%; /* Aumentado para 90% da largura da viewport para a imagem ser maior */
+    width: 90%; /* Largura responsiva */
+    text-align: center;
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+}
+
+/* Estilos para cada passo da história */
+.passo {
+    display: none; /* Oculta todos os passos por padrão */
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Espaçamento entre os elementos */
+}
+
+.passo.ativo {
+    display: flex; /* Mostra apenas o passo ativo */
+}
+
+.passo img {
+    width: 100%; /* A imagem agora ocupa 100% da largura do seu contêiner */
+    height: auto;
+    border-radius: 10px; /* Cantos arredondados para imagens */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Sombra mais intensa para destaque */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+    margin-bottom: 15px; /* Adiciona um pouco de espaço abaixo da imagem */
+    /* Adicionando um leve efeito de escala no hover para mais imersão */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.passo img:hover {
+    transform: scale(1.02); /* Aumenta ligeiramente a imagem no hover */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35); /* Sombra ainda mais pronunciada no hover */
+}
+
+
+.passo p {
+    font-size: 1.1em; /* Tamanho da fonte ligeiramente maior para o texto */
+    margin: 0;
+    padding: 0 10px; /* Padding horizontal para o texto */
+}
+
+/* Estilos para os botões de navegação */
+.btn-proximo {
+    background-color: #4CAF50; /* Verde vibrante */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px; /* Cantos arredondados para os botões */
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600; /* Negrito para o texto do botão */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Transições suaves */
+    margin-top: 15px; /* Espaçamento superior */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para os botões */
+    width: auto; /* Largura automática para o botão */
+    min-width: 180px; /* Largura mínima para botões */
+}
+
+.btn-proximo:hover {
+    background-color: #45a049; /* Verde um pouco mais escuro ao passar o mouse */
+    transform: translateY(-2px); /* Efeito de "levantar" ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra maior no hover */
+}
+
+.btn-proximo:active {
+    background-color: #3e8e41; /* Verde mais escuro ao clicar */
+    transform: translateY(0); /* Retorna à posição original ao clicar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    main {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .btn-proximo {
+        padding: 10px 20px;
+        font-size: 0.9em;
+        min-width: unset; /* Remove largura mínima em telas menores */
+        width: 100%; /* Botões ocupam a largura total em telas menores */
+    }
+
+    .passo p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 15px;
+    }
+
+    .passo {
+        gap: 15px;
+    }
+}
